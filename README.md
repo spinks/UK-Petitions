@@ -1,6 +1,6 @@
 # Visualisation of Petition and EU Referendum Data
 
-This folder contains data and code behind the "[Signatures by Constituency](https://public.tableau.com/views/SignaturesbyConstituency4th/DashboardFixedSize?:embed=y&:display_count=yes)" tableau visualisation.
+This folder contains data and code behind the "[Signatures by Constituency](https://public.tableau.com/views/SignaturesbyConstituency5th/DashboardFixedSize?:embed=y&:display_count=yes)" tableau visualisation.
 
 ## gather.py
 
@@ -27,7 +27,7 @@ This writeup outlines:
 
 ### Map Data
 - Shape files for constituencies is available at: [data.gov.uk](https://data.gov.uk/dataset/westminster-parliamentary-constituencies-december-2016-super-generalised-clipped-boundaries-in-4)
-- Data for hex map of constituencies is available at: [thedataschool.co.uk](https://www.thedataschool.co.uk/rob-suddaby/getting-creative-building-visualisations-from-web-content/)
+- Data for hex map of constituencies is available at: [odileeds.org](https://odileeds.org/projects/hexmaps/constituencies/)
 
 ### EU Referendum Data
 - Estimates for votes by constituency available at: [House of Commons Library Parliament and Elections](https://commonslibrary.parliament.uk/parliament-and-elections/elections-elections/brexit-votes-by-constituency/)
