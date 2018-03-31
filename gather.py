@@ -1,8 +1,7 @@
-# api test
+# gather
 import pandas as pd
 import io
 import time
-import requests
 import zipfile
 import zlib
 import urllib.request
@@ -37,9 +36,10 @@ for petition_url in url_list:
 
     count += 1
     if count % 250 == 0:
-        print('{} files reached in {} s sleeping for 10s'.format(
-            count, time.time() - start))
-        time.sleep(10)
+        print('{} files reached in {}s'.format(count, time.time() - start))
+
+if len(errors) != 0:
+    print(errors)
 
 signatures = pd.DataFrame(
     signatures, columns=['ons_code', 'signature_count', 'date'])
@@ -78,7 +78,7 @@ region_selector = {'region': ['South West', 'South East', 'London',
                               'Northern Ireland', 'North East', 'Scotland'],
                    'region_x': [2, 3, 4, 2, 3, 4, 5, 3, 4, 1, 4, 3],
                    'region_y': [1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 5]}
-region_selector = pd.DataFrame(data=region_selector)
+region_selector = pd.DataFrame(region_selector)
 
 master = signatures.copy()
 master = master.merge(mp, how='left', on='ons_code')
@@ -88,8 +88,3 @@ master = master.merge(hex, how='left', on='ons_code')
 master = master.merge(region_selector, how='left', on='region')
 
 master.to_csv('uk_petitions_master.csv', index=False)
-
-
-# To run without downloading run these lines, else comment below line
-signatures = pd.read_csv('signatures_backup.csv.zip')
-mp = pd.read_csv('mp_backup.csv.zip')
